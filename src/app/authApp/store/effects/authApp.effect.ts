@@ -35,7 +35,7 @@ export class PostEffects {
       )
     )
   );
-  reisterUser$ = createEffect(() =>
+  registerUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(PostApiActions.registerUser),
       switchMap(({ registerData }) =>

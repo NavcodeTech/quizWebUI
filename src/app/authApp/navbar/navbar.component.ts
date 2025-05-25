@@ -5,13 +5,14 @@ import { postFeature } from '../store/features/authApp.feature';
 import { map } from 'rxjs';
 import { LoginResponse, StandardReponse } from '../model/userModel';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, RouterModule]
 })
 export class NavbarComponent implements OnInit {
   public userLoggedIn!: string;

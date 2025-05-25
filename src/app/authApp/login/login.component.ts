@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit{
           this.loginResponseData = loginResponse;
           console.log('loggged in user',);
           localStorage.setItem('loggedInUser', JSON.stringify(this.loginForm.value.email));
+          localStorage.setItem('token', JSON.stringify(this.loginResponseData.token));
           this.router.navigate(['/dashboard']);
          }
           return loginResponse;

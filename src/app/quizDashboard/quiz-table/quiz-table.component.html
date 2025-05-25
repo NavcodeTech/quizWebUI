@@ -1,3 +1,4 @@
+<ng-container *ngIf="quizDetailsStream | async"></ng-container>
 <div class="container mt-4">
   <h2 class="mb-3">Quiz Details</h2>
   <table class="table table-bordered table-hover table-striped">
@@ -17,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let quiz of quizzes; let i = index" [ngClass]="i % 2 === 0 ? 'light-grey-row' : 'dark-grey-row'">
+      <tr *ngFor="let quiz of quizDetailsList; let i = index" [ngClass]="i % 2 === 0 ? 'light-grey-row' : 'dark-grey-row'">
         <td>{{ quiz.id }}</td>
         <td>{{ quiz.title }}</td>
         <td>{{ quiz.description }}</td>
@@ -28,11 +29,11 @@
         <td>{{ quiz.randomizeQuestion ? 'Yes' : 'No' }}</td>
         <td>{{ quiz.maxAttempts }}</td>
         <td>{{ quiz.fullMarks }}</td>
-        <td>
+        <!-- <td>
           <ul class="mb-0">
             <li *ngFor="let question of quiz.questionList">{{ question.text }}</li>
           </ul>
-        </td>
+        </td> -->
       </tr>
     </tbody>
   </table>
